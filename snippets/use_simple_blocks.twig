@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% set list = {'A', 'B', 'C'} %}
+{% {% block  content %}
+    <ul>
+    {% {% for name in list %}
+        {% set block=getBlockByName(name) %}
+        <li>
+            {{ block->getContent() }}
+        </li>
+    {% endfor %}}
+    </ul>
+{% endblock %}}
